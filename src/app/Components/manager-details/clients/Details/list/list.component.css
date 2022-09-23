@@ -1,0 +1,61 @@
+.table_container{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.table_container > div {
+    width: 95%;
+}
+
+header {
+    background-color: rgba(3, 9, 17, 0.789);
+    height: vh;
+    color: #fff;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* justify-content: center; */
+
+    
+}
+
+.userName {
+    height: 5vh;
+    width: 10vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Single Button used 3 times to navigate among navigations */
+.button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 8vh;
+    width: 10vw;
+    /* background-color: brown; */
+
+    /* margin: 0 2%; */
+}
+
+.button:hover {
+    color: #fff;
+    background-color: rgba(3, 9, 17, 0.789);
+}
+
+.panel {
+    background-color: #f7f7f7;
+    padding: 20px 25px 30px;
+    margin: 0 auto 25px;
+    margin-top: 50px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+}

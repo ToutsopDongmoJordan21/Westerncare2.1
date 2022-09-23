@@ -1,0 +1,25 @@
+.bg-dark {
+  background-color: brown !important;
+}
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+.rounded-circle {
+  border-radius: 50% !important;
+}
+
+.img-fluid {
+  margin: 15px auto;
+  display: block;
+  width: 90px;
+  height: 90px;
+  border: 4px solid white;
+}
+img {
+  vertical-align: inherit;
+}
+
+.p {
+    color: #dee3e4 !important;
+}

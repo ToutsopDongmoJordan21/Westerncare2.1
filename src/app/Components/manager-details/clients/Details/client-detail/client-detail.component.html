@@ -1,0 +1,33 @@
+<div class="panel-heading" style="text-align: center;">
+      <h2><i>User List</i></h2>
+</div>
+<table class="table table-striped">
+    <thead>
+      <tr>
+            <th>#</th>
+            <th>Username</th>
+            <th>User Email</th>
+            <th>User Postes</th>
+            <th>Phone Number</th>
+            <th>Create By</th>
+            <th>Date</th>
+            <th>Password</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users let i = index">
+                <th scope="row">{{ i + 1 }}</th>
+                <td>{{user.username}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.postes}}</td>
+                <td>{{user.phone}}</td>
+                <td>{{user.createBy}}</td>
+                <td>{{user.date}}</td>
+                <td>{{user.password}}</td>
+                
+                <td>
+                    <span (click)="deleteUser(user)" class="btn btn-danger">Delete</span>
+                </td>
+            </tr>    
+    </tbody>
+  </table>

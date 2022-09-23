@@ -1,0 +1,102 @@
+/* This Div is for the general container within wich the login page elements will be contained */
+body {
+    background-color: brown;
+
+    display: flex;
+    justify-content: center;
+}
+
+div {
+    background-color: #ddd;
+    width: 70vh;
+    align-items: center;
+    height: 81vh;
+    border-radius: 1%;
+}
+
+/*---------------------------------------------------------------------------------------------*/
+/* Logo of Best Western */
+.logo_container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 16vh;
+    /* border: 2px solid black; */
+}
+.logo_container > img {
+    width: 100%;
+    height: 20vh;
+    object-fit: contain;
+}
+/* ---------------------------------------------------- */
+/*  */
+
+.email_pass_container{
+    width: 100%;
+    height: 65vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    /* border: 2px solid yellow; */
+}
+.username_container{
+    width: 70%;
+    height: 5vh;
+
+    margin-bottom: 6vh;
+    /* border: 2px solid black; */
+}
+.email_container{
+    width: 70%;
+    height: 5vh;
+
+    margin-bottom: 6vh;
+    /* border: 2px solid black; */
+}
+.postes_container{
+    width: 70%;
+    height: 5vh;
+
+    margin-bottom: 6vh;
+    /* border: 2px solid black; */
+}
+
+.phone_container{
+    width: 70%;
+    height: 5vh;
+
+    margin-bottom: 6vh;
+    /* border: 2px solid black; */
+}
+
+.createBy_container{
+    width: 70%;
+    height: 5vh;
+
+    margin-bottom: 6vh;
+    /* border: 2px solid red; */
+}
+/* ---------------------------------------------------- */
+/* Button */
+.button_container{
+    width: 30%;
+    height: 10vh;
+
+    /* border: 2px solid black; */
+}
+
+.button_container > button {
+    background-color: rgb(40, 141, 187);
+    color: #fff;
+    width: 80%;
+    height: 6vh;
+}
+.button_container > button:hover {
+    background-color: rgb(0, 47, 68);
+}
+/*---------------------------------------------------------------------------------------------*/

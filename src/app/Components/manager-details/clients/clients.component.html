@@ -1,0 +1,10 @@
+<header>
+    <div class=" button" (click)= "onCLick('add_new')" >Add New</div>
+    <div class=" button" (click)= "onCLick('list')" >Client List</div>
+    <div class=" button" (click)= "onCLick('custommer_details')" >Users List</div>
+</header>
+<section>
+    <ng-container *ngComponentOutlet = "componentSwitcher"></ng-container>
+</section>
+
+

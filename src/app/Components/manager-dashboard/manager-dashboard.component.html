@@ -1,0 +1,55 @@
+<section>
+
+  <!-- Header -->
+  <header >
+    <div class="grid_container" fxLayout="row">
+
+      <div class="logo" fxFlex="20">
+          <fa-icon [icon]="faHamburger"></fa-icon>
+          <img [src]="bestWestern" alt="logo">
+      </div>
+
+      <div class="search_bar" fxFlex="60">
+        <nav class="navbar navbar-light bg-light">
+          <div class="form_">
+            <input class="form-control search_" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn button" type="submit">Connect</button>
+          </div>
+        </nav>
+      </div>
+
+      <div class="profile" fxFlex *ngIf="currentUser">
+        <div class="profile_picture">
+          <img [src]="currentUser.imageUrl" alt="profile picture">
+        </div>
+        
+        <div class="user_name">{{currentUser.username}}</div>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Body will take two parts, Nav on the left and Details of Nav on the right-->
+  <section class="main">
+    <!-- left -->
+    <nav>
+        <mat-nav-list id="sideBar">
+          <!-- <div mat-list-item class="emptyContainer1"></div> -->
+
+          <a><div class="clients" (click)= "onCLick('Client')" style="margin-top: 35%;"><fa-icon [icon]="newClient"></fa-icon> {{Client}} </div></a>
+          <a><div class="personnel" (click)= "onCLick('personnel')"><fa-icon [icon]="newUser"></fa-icon>  {{personnel}} </div></a>
+          <a><div class="user_profile" (click)= "onCLick('user_profile')"><fa-icon [icon]="updateProfile"></fa-icon>  {{user_profile}} </div></a>
+          
+          <div mat-list-item class="emptyContainer"></div>
+          <div class="btn logout" (click)="logout()"><fa-icon [icon]="logOut"></fa-icon>  Log Out</div>
+        </mat-nav-list>
+    </nav>
+
+    <aside>
+      <ng-container *ngComponentOutlet = "componentSwitcher"></ng-container>
+    </aside>
+
+  </section>
+</section>
+
+<router-outlet></router-outlet>

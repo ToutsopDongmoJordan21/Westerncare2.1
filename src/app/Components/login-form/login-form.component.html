@@ -1,0 +1,29 @@
+<div>
+  <!-- Company Logo -->
+  <div class="logo_container">
+    <img [src]="bestWestern" alt="logo">
+  </div>
+
+  <form (ngSubmit)="login()" *ngIf="loginForm" [formGroup]="loginForm">
+    <div class="email_pass_container">
+      <!-- Email -->
+      <div class="email_container">
+        <label for="exampleInputEmail1">Email address</label>
+        <input type="email" formControlName="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="index@example.com">
+      </div>
+      <!-- Password -->
+      <div class="password_container">
+        <label for="exampleInputPassword1">Password</label>
+        <input type="password" formControlName="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+      </div>
+      <!-- Button -->
+      <div class="button_container">
+        
+          <button type="submit" class="btn btn-primary" color="primary"
+            [disabled]="loginForm.invalid">Continue</button>  
+        
+      </div>
+<!--         <h6 align="right" (click)="route()" class="text-info"><u><i>Create your account now</i></u></h6>
+ -->    </div>
+  </form>
+</div>

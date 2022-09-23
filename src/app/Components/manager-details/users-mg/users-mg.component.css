@@ -1,0 +1,110 @@
+.form_container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 72vh;
+
+    /* border: 2px solid red; */
+}
+.form_container > div {
+    width: 96%;
+    height: 68vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.img_container{
+    height: 100%;
+    width: 25%;
+
+    padding: 11vh 0;
+}
+
+.img{
+    width: 200px;
+    height: 200px;
+
+    object-fit: cover;
+}
+.img > img{
+    width: 200px;
+    height: 200px;
+}
+
+.right_form_container{
+    height: 100%;
+    width: 150%;
+    /* border: 2px solid red; */
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.form1{
+    height: 100%;
+    width: 100%;
+    /* border: 2px solid black; */
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 2.5%;
+
+    /* border: 2px solid red; */
+}
+.form1 > input{
+    width: 50%;
+    height: 10vh;
+    border: 1px solid rgba(3, 9, 17, 0.789);
+
+    padding: 2vh;
+    margin: 2vh;
+}
+
+.form2{
+    height: 100%;
+    width: 100%;
+    /* border: 2px solid black; */
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    /* border: 2px solid red; */
+}
+
+.form2 > input{
+    width: 50%;
+    height: 10vh;
+    border: 1px solid rgba(3, 9, 17, 0.789);
+
+    padding: 2vh;
+    margin: 2vh;
+}
+
+.create_button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 30%;
+    height: 10vh;
+    border: 1px solid rgba(3, 9, 17, 0.789);
+
+    padding: 2vh;
+    margin: 2vh;
+}
+
+.create_button:hover {
+    background-color: rgba(3, 9, 17, 0.789);
+    color: #fff;
+}

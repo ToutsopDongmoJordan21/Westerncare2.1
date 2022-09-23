@@ -1,0 +1,55 @@
+<div class="form_container">
+  <div>
+    <div class="img_container">
+        <div class="img" style="margin-top: 10%;">
+          <img src="{{fb}}" alt="User Picture"
+            style="max-width: 250px;">
+          <input type="file" name="client-img" 
+              id="file" class="form-control" #userPhoto
+              (change)="onFileSelected($event)"
+              accept="image/*" autocomplete="off">
+        </div>
+      </div>
+
+    <form (ngSubmit)="onSubmit()" *ngIf="signUpForm" [formGroup]="signUpForm">
+      <h2 style="position: absolute; margin-top: 05%;"><i>Create Users</i></h2>
+      
+        <div class="right_form_container" style="margin-top: 140px;">
+          <div class="form1">
+            <input type="type" [formControl]="usernameControl"
+                class="form-control" 
+                placeholder="Users Name"  />
+            
+            <input type="text"  
+                class="form-control" [formControl]="postesControl" 
+                placeholder="User Postes" />
+            <input type="password"  
+                class="form-control" [formControl]="phoneControl" 
+                placeholder="User Password" />
+          </div>
+
+          <div class="form2">
+            <input type="email" [formControl]="emailControl" 
+                  class="form-control" 
+                  aria-describedby="emailHelp" 
+                  placeholder="User Email" />
+
+            <input type="date" [formControl]="dateControl"
+                class="form-control" 
+                placeholder="date" />
+            
+            <input type="number"  
+                class="form-control" [formControl]="passwordControl" 
+                placeholder="User Phone Number" />
+          </div>
+        </div>
+
+        <div>
+            <button type="submit" class="btn create_button"
+                 [disabled]="!signUpForm.valid">
+                     Create
+            </button>
+        </div>
+    </form>
+  </div>
+</div>

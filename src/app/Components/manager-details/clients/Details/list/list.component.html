@@ -1,0 +1,43 @@
+
+
+<div class="table_container">
+  <div>
+    <div class="panel-heading" style="text-align: center;">
+        <h2><i>Client List</i></h2>
+    </div>
+      <table class="table table-striped ">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Client Nom</th>
+            <th scope="col">Client Prenom</th>
+            <th scope="col">Catégories</th>
+            <th scope="col">Type de Client</th>
+            <th scope="col">Create By</th>
+            <!-- <th scope="col">Date Creation</th> -->
+            <th scope="col">Nom Service</th>
+            <th scope="col">Type Service</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let client of clients let i = index">
+            <th scope="row">{{ i + 1 }}</th>
+              <td>{{client.name}}</td>
+              <td>{{client.username}}</td>
+              <td>{{client.categories}}</td>
+              <td>{{client.typeClient}}</td>
+              <td>{{client.createBy }}</td>
+              <!-- <td>{{client.addedDate.toDate() | date: 'dd/MM/yyyy HH:mm:ss'}}</td> -->
+              <td>{{client.service}}</td>
+              <td>{{client.typeService}}</td>
+
+               <td>
+                  <span (click)="deleteClients(client.id!)" class="btn btn-danger">Delete</span> 
+                  <span (click)="detailsClient(client.id!)" class="btn btn-info" style="margin-left: 10px">Details</span>             
+                </td>
+          </tr>
+          
+        </tbody>
+      </table>
+  </div>
+</div>

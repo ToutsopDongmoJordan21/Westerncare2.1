@@ -1,0 +1,141 @@
+<div class="form_container">
+  <div>
+
+      <div class="img_container" style="margin-top: 10%;">
+        <div class="img">
+          <img src="{{fb}}" alt="User Picture"
+            style="max-width: 250px;">
+          <input type="file" name="client-img" 
+              id="file" class="form-control" #userPhoto
+              (change)="onFileSelected($event)"
+              accept="image/*" autocomplete="off">
+        </div>
+      </div>
+
+    <form (ngSubmit)="onSubmit()" *ngIf="registrationForm" [formGroup]="registrationForm">
+
+      <h1 style="align-items: center; margin-top: 120%;"><i>Create Clients</i></h1>
+      <h2 style="align-items: center;"><i>Coordonnée du client</i></h2>
+      
+        <div class="right_form_container">
+          <div class="form1">
+            <input type="type" [formControl]="nameControl"
+                class="form-control" 
+                placeholder="Nom" 
+                style="margin-top: -02%;"/>
+
+            <input type="type" [formControl]="professionControl"
+                class="form-control" 
+                placeholder="Profession" />
+
+            <input type="text"  
+                class="form-control" [formControl]="langueControl" 
+                placeholder="Langue Client" />
+
+            <label> Statut du Client</label>
+
+            <select formControlName="statut" style="width: 50%; font-size: larger; margin-top: 05%;">
+              <option [ngValue]="null" disabled>Choisir le Statut</option>
+              <option *ngFor="let stat of statut" [ngValue]="stat.name">{{stat.name}}</option>
+            </select>
+
+            <h2 style="margin-top: 10%; margin-left: -45%;"> Adresse du Client</h2>
+
+            <input type="text"  
+                  class="form-control" [formControl]="villeControl" 
+                  placeholder="Ville"
+                  style="margin-left: -120%;"/>
+        
+            <input type="text"  
+                  class="form-control" [formControl]="paysControl" 
+                  placeholder="Pays"
+                  style="margin-left: -120%;"/>
+
+            <label style=" margin-top: 05%; margin-left: -120%;">Continent du Client</label>
+
+            <select formControlName="continent" style="font-size: larger; margin-top: 05%; margin-left: -120%;">
+              <option [ngValue]="null" disabled>Choisir le Continent</option>
+              <option *ngFor="let cont of continent" [ngValue]="cont.name">{{cont.name}}</option>
+            </select>
+
+            <h3 style="margin-left: -120%; margin-top: 10%; font-size: medium;"><b>Categories de la Reservation</b></h3>
+
+            <select formControlName="categories" style="font-size: larger; margin-top: 05%; margin-left: -120%;">
+              <option [ngValue]="null" disabled>Choisir la Categories</option>
+              <option *ngFor="let cat of categories" [ngValue]="cat.name">{{cat.name}}</option>
+            </select>
+           
+          </div>
+
+          <div class="form2" style="margin-top: 10%;">
+            <input type="type" [formControl]="usernameControl"
+                class="form-control" 
+                placeholder="Prenom" 
+                style="margin-top: -20%;"/>
+
+            <input type="date" [formControl]="dateControl"
+                class="form-control" 
+                placeholder="date" />
+
+            <input type="text"  
+                class="form-control" [formControl]="nationalityControl" 
+                placeholder="Nationalité" />
+
+            <label> Sexe du Client</label>
+
+            <select formControlName="sexe" style="font-size: larger;">
+              <option [ngValue]="null" disabled>Select Sexe</option>
+              <option *ngFor="let sex of sexe" [ngValue]="sex.name">{{sex.name}}</option>
+            </select>
+
+            <label style="margin-top: 05%;"> Type de client</label>
+
+            <select formControlName="typeClient" style="font-size: larger; margin-top: 05%;">
+              <option [ngValue]="null" disabled>Choisir Type Client</option>
+              <option *ngFor="let typ of type" [ngValue]="typ.name">{{typ.name}}</option>
+            </select>
+
+            <input type="email" [formControl]="emailControl" 
+                  class="form-control" 
+                  aria-describedby="emailHelp" 
+                  placeholder="Client Email"
+                  style="margin-top: 09%; 
+                        margin-left: -120%;"/>
+
+            <input type="number"  
+                class="form-control" [formControl]="phoneControl" 
+                placeholder="Client Number"
+                style="margin-left: -120%;"/>
+              
+            
+            
+            <h3 style=" margin-left: -130%; margin-top: 05%; font-size: medium;"><b>Service utilisé</b></h3>
+
+            <label style="margin-left: -130%; margin-top: 01%;">Nom du service </label>
+
+            
+
+            <select formControlName="service" style="font-size: larger; margin-top: 05%; margin-left: -130%;">
+              <option [ngValue]="null" disabled>Choisir le service</option>
+              <option *ngFor="let ser of service" [ngValue]="ser.name">{{ser.name}}</option>
+            </select>
+
+            <label style="margin-left: -130%; margin-top: 05%;">Type de service </label>
+
+            <select formControlName="typeService" style="font-size: larger; margin-top: 05%; margin-left: -130%;">
+              <option [ngValue]="null" disabled>Choisir Type Service</option>
+              <option *ngFor="let tser of typeService" [ngValue]="tser.name">{{tser.name}}</option>
+            </select>
+
+          </div>
+        </div>
+
+        <div style="margin-top: 10%;">
+            <button type="submit" class="btn create_button"
+                 [disabled]="!registrationForm.valid">
+                     Create
+            </button>
+        </div>
+    </form>
+  </div>
+</div>

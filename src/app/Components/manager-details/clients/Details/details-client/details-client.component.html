@@ -1,0 +1,159 @@
+<section>
+
+  <!-- Header -->
+  <header >
+    <div class="grid_container" fxLayout="row">
+
+      <div class="logo" fxFlex="20">
+          <fa-icon [icon]="faHamburger"></fa-icon>
+          <img [src]="bestWestern" alt="logo">
+      </div>
+
+      <div class="search_bar" fxFlex="60">
+        <nav class="navbar navbar-light bg-light">
+          <div class="form_">
+            <input class="form-control search_" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn button" type="submit">Connect</button>
+          </div>
+        </nav>
+      </div>
+
+      <div class="profile" fxFlex *ngIf="currentUser">
+        <div class="profile_picture">
+          <img [src]="currentUser.imageUrl" alt="profile picture">
+        </div>
+        
+        <div class="user_name">{{currentUser.username}}</div>
+      </div>
+
+    </div>
+    
+  </header>
+
+  <!-- Body will take two parts, Nav on the left and Details of Nav on the right-->
+  <section class="main">
+    <!-- left -->
+    <nav>
+        <mat-nav-list id="sideBar">
+          <!-- <div mat-list-item class="emptyContainer1"></div> -->
+
+          <a><div class="clients" (click)= "go()" style="margin-top: 35%;"><fa-icon [icon]="newClient"></fa-icon> {{Client}} </div></a>
+          <a><div class="personnel" (click)= "go()"><fa-icon [icon]="newUser"></fa-icon>  {{personnel}} </div></a>
+          <a><div class="user_profile" (click)= "go()"><fa-icon [icon]="updateProfile"></fa-icon>  {{user_profile}} </div></a>
+          
+          <div mat-list-item class="emptyContainer"></div>
+          <div class="btn logout" (click)="logout()"><fa-icon [icon]="logOut"></fa-icon>  Log Out</div>
+        </mat-nav-list>
+    </nav>
+  </section>
+
+<div class="table_container">
+  <div style="width: 70%; margin-left: 20%; margin-top: -45%;">
+    <div class="panel-heading" style="text-align: center;">
+        <h2><i>Client Details</i></h2>
+    </div>
+
+    <table class="table table-striped" 
+          *ngIf="clients" style="align-items: center;">
+      <thead align="center">
+          <tr style="background-color:rgb(132, 139, 137);">
+            <td>
+              <img [src]="clients.imageUrl" alt="profile picture"
+              class="img-fluid rounded-circle d-inline-block w-auto"   >
+            </td>
+            <td class="table-dark"><h2 style="margin-top: 10%;">Coordonnées du client</h2></td>
+          </tr>
+          <tr>
+            <th>Nom du Client: </th>
+            <td>{{clients.name}}</td>
+          </tr>
+          <tr>
+            <th>Prenom Du client: </th>
+            <td>{{clients.username}}</td>
+          </tr>
+          <tr>
+            <th>Profession Du client: </th>
+            <td>{{clients.profession}}</td>
+          </tr>
+          <tr>
+            <th>Dae de Naissance: </th>
+            <td>{{clients.dates}}</td>
+          </tr>
+          <tr>
+            <th>Nationalité du Client: </th>
+            <td>{{clients.nationality}}</td>
+          </tr>
+          <tr>
+            <th>Sexe du Client: </th>
+            <td>{{clients.sexe}}</td>
+          </tr>
+          <tr>
+            <th>Statut Matrimoniale du Client: </th>
+            <td>{{clients.statut}}</td>
+          </tr>
+          <tr>
+            <th>Type de Client </th>
+            <td>{{clients.typeClient}}</td>
+          </tr>
+          <tr>
+            <th>Langue du Client </th>
+            <td>{{clients.langue}}</td>
+          </tr>
+          <tr>
+            <td colspan="2" style="background-color:rgb(132, 139, 137);"><h2>Addresse du Client</h2></td>
+          </tr>
+          <tr>
+            <th>Ville du Client </th>
+            <td>{{clients.ville}}</td>
+          </tr>
+          <tr>
+            <th>Pays d'origine du Client </th>
+            <td>{{clients.pays}}</td>
+          </tr>
+          <tr>
+            <th>Continent d'origine du Client </th>
+            <td>{{clients.continent}}</td>
+          </tr>
+          <tr>
+            <th>Numéro de télèphone du Client </th>
+            <td>{{clients.phone}}</td>
+          </tr>
+          <tr>
+            <td colspan="2" style="background-color:rgb(132, 139, 137);"><h2>Catégories du Client </h2></td>
+          </tr>
+          <tr>
+            <th>Type de catégorie du Client </th>
+            <td>{{clients.categories}}</td>
+          </tr>
+          <tr>
+            <td colspan="2" style="background-color:rgb(132, 139, 137);"><h2>Services utilisés par le Client </h2></td>
+          </tr>
+          <tr>
+            <th>Nom du Service </th>
+            <td>{{clients.service}}</td>
+          </tr>
+          <tr>
+            <th>Type de Service </th>
+            <td>{{clients.typeService}}</td>
+          </tr>
+          <tr>
+            <td colspan="2" style="background-color:rgb(132, 139, 137);"><h2>Information Structurel </h2></td>
+          </tr>
+          <tr>
+            <th>Créer par: </th>
+            <td>{{clients.createBy}}</td>
+          </tr>
+          <tr>
+            <th>Date de la création </th>
+            <td>{{clients.addedDate.toDate() | date: 'dd/MM/yyyy HH:mm:ss'}}</td>
+          </tr>
+      </thead>
+    </table>
+  </div>
+</div>
+</section>
+
+<router-outlet></router-outlet>
+    
+
+ 

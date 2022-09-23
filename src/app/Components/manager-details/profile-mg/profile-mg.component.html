@@ -1,0 +1,47 @@
+<div class="app flex-row align-items-center">
+  <div class="container-fluid" *ngIf="currentUser">
+    <table class="table table-striped" style="align-items: center; margin-top:05% ;">
+      <thead align="center">
+          <tr style="background-color:rgb(132, 139, 137);">
+            <td>
+              <img [src]="currentUser.imageUrl" alt="profile picture"
+              class="img-fluid rounded-circle d-inline-block w-auto"   >
+            </td>
+            <td class="table-dark"><h2 style="margin-top: 07%;">Information Personnel</h2></td>
+          </tr>
+          <tr>
+            <th>Nom de l'utilisateur: </th>
+            <td>{{currentUser.username}}</td>
+          </tr>
+          <tr>
+            <th>Adresse Email: </th>
+            <td>{{currentUser.email}}</td>
+          </tr>
+          <tr>
+            <th>Votre mot de passe: </th>
+            <td>{{currentUser.password}}</td>
+          </tr>
+          <tr>
+            <th>Numéro de Télèphone: </th>
+            <td>{{currentUser.phone}}</td>
+          </tr>
+          <tr>
+            <td colspan="2" style="background-color:rgb(132, 139, 137);"><h2>Information Professionnel</h2></td>
+          </tr>
+          <tr>
+            <th>Poste de travail: </th>
+            <td>{{currentUser.role}}</td>
+          </tr>
+          <tr>
+            <th>Créer par: </th>
+            <td>{{currentUser.createBy}}</td>
+          </tr>
+          <tr>
+            <th>Date de Création: </th>
+            <td>{{currentUser.date}}</td>
+          </tr>
+        </thead>
+    </table>
+
+</div>
+</div>

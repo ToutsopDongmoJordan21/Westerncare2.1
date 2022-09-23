@@ -1,0 +1,57 @@
+<body>
+  <div>
+    <!-- Company Logo -->
+    <div class="logo_container">
+      <img [src]="bestWestern" alt="logo">
+    </div>
+    <div class="img_container">
+        <div class="img">
+          <img src="{{fb}}" alt="User Picture"
+            style="max-width: 250px;">
+          <input type="file" name="client-img" 
+              id="file" class="form-control" #userPhoto
+              (change)="onFileSelected($event)"
+              accept="image/*" autocomplete="off">
+        </div>
+      </div>
+
+    <form (ngSubmit)="onSubmit()" *ngIf="registrationForm" [formGroup]="registrationForm">
+      <div class="email_pass_container">
+        <!-- Email -->
+        <div class="username_container">
+          <label for="exampleInputUsername1">Username</label>
+          <input type="type" [formControl]="usernameControl"
+                class="form-control" placeholder="Insert your Username" />
+        </div>
+        <div class="email_container">
+          <label for="exampleInputEmail1">Email address</label>
+          <input type="email" [formControl]="emailControl" 
+                  class="form-control" 
+                  aria-describedby="emailHelp" 
+                  placeholder="index@example.com" />
+        </div>
+        <div class="phone_container">
+          <label for="exampleInputPhone">Phone Number</label>
+          <input type="text"  
+                class="form-control" [formControl]="phoneControl" 
+                placeholder="(+237)" />
+        </div>
+        <!-- Password -->
+        <div class="createBy_container">
+          <label for="exampleInputCreateBy">Create By: </label>
+          <input type="text" [formControl]="createControl"
+                class="form-control" 
+                placeholder="Create by:" />
+        </div>
+        <!-- Button -->
+        <div class="button_container">
+          
+            <button type="submit" class="btn btn-primary" color="primary"
+              [disabled]="!registrationForm.valid">Sign In</button>  
+          
+        </div>
+  <!--         <h6 align="right" (click)="route()" class="text-info"><u><i>Create your account now</i></u></h6>
+  --> </div>
+    </form>
+  </div>
+</body>
